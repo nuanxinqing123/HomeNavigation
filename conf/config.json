@@ -1,0 +1,31 @@
+{
+  "Config": {
+    "Logo": "img/logo.png",
+    "Favicon": "img/favicon.ico",
+    "Title": "Cloud Services",
+    "FooterTitle": "陕ICP备XXXXXXXX号-1",
+    "FooterTitleLink": "https://beian.miit.gov.cn/",
+    "FooterTextDataOne": "Copyright © 2021",
+    "FooterTextDataTwo": "陆比柒",
+    "FooterTextDataTwoLink": "https://6b7.org/"
+  },
+  "SoftWare": {
+    "port": "8100"
+  },
+  "Data": [
+    {
+      "id": 1,
+      "title": "我的博客",
+      "ico": "img/png/AppStore.png",
+      "w_link": "https://6b7.org/",
+      "n_link": "https://6b7.org/"
+    },
+    {
+      "id": 2,
+      "title": "我的网盘",
+      "ico": "img/png/iCloud-Drive.png",
+      "w_link": "https://alist.6b7.org/",
+      "n_link": "https://alist.6b7.org/"
+    }
+  ]
+}
