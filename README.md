@@ -21,7 +21,7 @@ cd ..
 # 第六步：运行Docker image
 docker run -itd --name HomeNavigation -v $PWD/HNconfig:/go/src/Gin_HomeNavigation/conf -p 8082:8100 nuanxinqing123/home_navigation:1.0
 ```
-好了，部署完成。如果需要修改前端的显示内容，直接修改 HNconfig/config.json里面的内容就好了
+好了，部署完成。如果需要修改前端的显示内容，直接修改 HNconfig/config.json里面的内容就好了。还有就是启动命令默认是8082端口，大家自行修改一下
 
 ### config.json 文件
 ```json
