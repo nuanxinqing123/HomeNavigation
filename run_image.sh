@@ -1,0 +1,1 @@
+docker run -itd --name HomeNavigation -p 8082:8100 home_navigation:1.0

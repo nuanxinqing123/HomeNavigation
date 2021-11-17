@@ -1,6 +1,28 @@
 ## 个人导航页
 程序的起因是因为家里申请了公网IP，因此购置了一套服务器在家里放着。但是方便操作和记忆，因为写了此导航来可以快速的从内网或者外网访问家里的某些服务
 
+### Docker部署
+```dockerfile
+# 第一步：拉取镜像
+docker pull nuanxinqing123/home_navigation:1.0
+
+# 第二步：创建映射文件夹并进入
+mkdir HNconfig 
+
+# 第三步：进入文件夹
+cd HNconfig
+
+# 第四步：下载配置文件
+wget https://ghproxy.com/https://github.com/nuanxinqing123/HomeNavigation/blob/master/conf/config.json
+
+# 第五步：返回上级目录
+cd ..
+
+# 第六步：运行Docker image
+docker run -itd --name HomeNavigation -v $PWD/HNconfig:/go/src/Gin_HomeNavigation/conf -p 8082:8100 nuanxinqing123/home_navigation:1.0
+```
+好了，部署完成。如果需要修改前端的显示内容，直接修改 HNconfig/config.json里面的内容就好了
+
 ### config.json 文件
 ```json
 {
