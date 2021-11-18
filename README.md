@@ -81,5 +81,17 @@ docker run -itd --name HomeNavigation -v $PWD:/go/src/Gin_HomeNavigation/conf -p
 以上配置文件是整个程序的所有配置项，由于程序采用JSON文件实时读取的方式，所以修改配置过后均可实时生效（除了端口需要重启生效）。
 
 
+### 版本通知
+```text
+2021.11.18：V1.1
+1、修复CSS的部分错误
+2、目前CSS任然存在问题，推荐添加Web不要超过16个
+3、添加所有演示图标
+
+2021.11.17：V1.0
+1、支持内网外网添加定义
+2、JSON文件动态加载全网页
+```
+
 ### 前端模板说明
 模板经过修改，原版模板来自于：http://www.wdmomo.fun:81/home/
