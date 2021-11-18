@@ -26,6 +26,76 @@
       "ico": "img/png/iCloud-Drive.png",
       "w_link": "https://alist.6b7.org/",
       "n_link": "https://alist.6b7.org/"
+    },
+    {
+      "id": 3,
+      "title": "我的音乐",
+      "ico": "img/png/Music.png",
+      "w_link": "#",
+      "n_link": "#"
+    },
+    {
+      "id": 4,
+      "title": "我的相册",
+      "ico": "img/png/Photos.png",
+      "w_link": "#",
+      "n_link": "#"
+    },
+    {
+      "id": 5,
+      "title": "我的视频",
+      "ico": "img/png/Videos.png",
+      "w_link": "#",
+      "n_link": "#"
+    },
+    {
+      "id": 6,
+      "title": "远程迅雷",
+      "ico": "img/png/Thunder.png",
+      "w_link": "#",
+      "n_link": "#"
+    },
+    {
+      "id": 7,
+      "title": "我的下载",
+      "ico": "img/png/Downloads.png",
+      "w_link": "#",
+      "n_link": "#"
+    },
+    {
+      "id": 8,
+      "title": "我的设置",
+      "ico": "img/png/Settings.png",
+      "w_link": "#",
+      "n_link": "#"
+    },
+    {
+      "id": 9,
+      "title": "BT下载",
+      "ico": "img/png/Transmission.png",
+      "w_link": "https://alist.6b7.org/",
+      "n_link": "https://alist.6b7.org/"
+    },
+    {
+      "id": 10,
+      "title": "NAS管理",
+      "ico": "img/png/FontExplorer-X.png",
+      "w_link": "#",
+      "n_link": "#"
+    },
+    {
+      "id": 11,
+      "title": "管理路由",
+      "ico": "img/png/Podcats.png",
+      "w_link": "#",
+      "n_link": "#"
+    },
+    {
+      "id": 12,
+      "title": "监听监控",
+      "ico": "img/png/FaceTime.png",
+      "w_link": "#",
+      "n_link": "#"
     }
   ]
 }
