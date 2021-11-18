@@ -3,23 +3,14 @@
 
 ### Docker部署
 ```dockerfile
-# 第一步：拉取镜像
-docker pull nuanxinqing123/home_navigation:1.0
+# 第一步：创建映射文件夹并进入
+mkdir HNconfig && cd HNconfig
 
-# 第二步：创建映射文件夹并进入
-mkdir HNconfig 
-
-# 第三步：进入文件夹
-cd HNconfig
-
-# 第四步：下载配置文件
+# 第二步：下载配置文件
 wget https://ghproxy.com/https://github.com/nuanxinqing123/HomeNavigation/blob/master/conf/config.json
 
-# 第五步：返回上级目录
-cd ..
-
-# 第六步：运行Docker image
-docker run -itd --name HomeNavigation -v $PWD/HNconfig:/go/src/Gin_HomeNavigation/conf -p 8082:8100 nuanxinqing123/home_navigation:1.0
+# 第三步：运行Docker image
+docker run -itd --name HomeNavigation -v $PWD:/go/src/Gin_HomeNavigation/conf -p 8082:8100 nuanxinqing123/home_navigation:1.0
 ```
 好了，部署完成。如果需要修改前端的显示内容，直接修改 HNconfig/config.json里面的内容就好了。还有就是启动命令默认是8082端口，大家自行修改一下
 
@@ -35,13 +26,13 @@ docker run -itd --name HomeNavigation -v $PWD/HNconfig:/go/src/Gin_HomeNavigatio
     "Title": "Cloud Services",
     # 网站底部标题
     "FooterTitle": "陕ICP备xxxxxxxx号-1",
-    # 网站底部标题（可空）
+    # 网站底部标题链接（可空）
     "FooterTitleLink": "https://beian.miit.gov.cn/",
     # 网站底部版权信息
     "FooterTextDataOne": "Copyright © 2021",
     # 网站底部其他文字（可随意自定义）
     "FooterTextDataTwo": "百度",
-    # 网站底部其他文字连接（可空）
+    # 网站底部其他文字链接（可空）
     "FooterTextDataTwoLink": "https://www.baidu.com/"
   },
   "SoftWare": {
