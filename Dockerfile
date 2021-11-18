@@ -1,4 +1,3 @@
-#FROM golang:1.17-alpine
 FROM golang:1.17
 MAINTAINER HomeNavigation "nuanxinqing@gmail.com"
 WORKDIR $GOPATH/src/Gin_HomeNavigation

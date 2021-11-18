@@ -1,1 +1,1 @@
-docker build -t home_navigation:1.0 .
+docker build -t home_navigation:1.1 .
