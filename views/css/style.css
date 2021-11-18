@@ -3483,7 +3483,8 @@ body {
 }
 
 #main {
-	margin-top: 5%
+	/*margin-top: 8%*/
+	margin-top: 40px
 }
 
 #logo {
@@ -3503,7 +3504,7 @@ body {
 	font-weight: 200;
 	font-size: 36px;
 	font-family: MyriadSetPro-Thin;
-	margin-top: 15px
+	margin-top: 10px
 }
 
 ul li {
