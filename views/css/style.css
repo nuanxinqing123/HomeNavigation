@@ -3446,28 +3446,28 @@ ul {
 	font-size: 12px
 }
 
-a {
-	color: #fff;
-	text-decoration: none
-}
+/*a {*/
+/*	color: black;*/
+/*	text-decoration: none*/
+/*}*/
 
 @font-face {
 	font-family: MyriadSetPro-Thin;
 	src: url(./font/MyriadSetPro-Thin.ttf)
 }
 
-body {
-		height: 100%;
-		background-color: #ffffff;
-		background-image: url("../img/overlay.png"), -moz-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("../img/bg.jpg");
-		background-image: url("../img/overlay.png"), -webkit-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("../img/bg.jpg");
-		background-image: url("../img/overlay.png"), -ms-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("../img/bg.jpg");
-		background-image: url("../img/overlay.png"), linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("../img/bg.jpg");
-		background-repeat: repeat,			no-repeat,			no-repeat;
-		background-size: 100px 100px, cover,				cover;
-		background-position: top left,		center center,		bottom center;
-		background-attachment: fixed,			fixed,				fixed;
-}
+/*body {*/
+/*		height: 100%;*/
+/*		background-color: #ffffff;*/
+/*		background-image: url("../img/overlay.png"), -moz-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("../img/bg.jpg");*/
+/*		background-image: url("../img/overlay.png"), -webkit-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("../img/bg.jpg");*/
+/*		background-image: url("../img/overlay.png"), -ms-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("../img/bg.jpg");*/
+/*		background-image: url("../img/overlay.png"), linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("../img/bg.jpg");*/
+/*		background-repeat: repeat,			no-repeat,			no-repeat;*/
+/*		background-size: 100px 100px, cover,				cover;*/
+/*		background-position: top left,		center center,		bottom center;*/
+/*		background-attachment: fixed,			fixed,				fixed;*/
+/*}*/
 
 #wrap {
 	width: 100%;
@@ -3544,8 +3544,8 @@ ul li a strong {
 	text-align: right;
 	font-size: 13px;
 	font-weight: 400;
-	color: #fff;
-	color: rgba(255, 255, 255, .8);
+	/*color: #fff;*/
+	/*color: rgba(255, 255, 255, .8);*/
 	overflow: visible !important;
 	z-index: 10
 }
@@ -3570,13 +3570,13 @@ ul li a strong {
 
 .footer-contents a, .footer-contents a:active, .footer-contents a:focus {
 	text-decoration: none;
-	color: #fff;
-	color: rgba(255, 255, 255, .8)
+	/*color: #fff;*/
+	/*color: rgba(255, 255, 255, .8)*/
 }
 
-.footer-contents a:hover {
-	color: #fff
-}
+/*.footer-contents a:hover {*/
+/*	color: #fff*/
+/*}*/
 
 .coffee_cup {
 	width: 20px;

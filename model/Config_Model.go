@@ -8,30 +8,37 @@ package model
 
 // Config 配置项
 type Config struct {
-	Config conf
+	Config   conf
 	SoftWare software
-	Data []Data
+	Data     []Data
+	Style    style
 }
 
 type conf struct {
-	Logo string   `json:"logo"`
-	Title string   `json:"title"`
-	Favicon string	`json:"favicon"`
-	FooterTitle string	`json:"FooterTitle"`
-	FooterTitleLink string	`json:"FooterTitleLink"`
-	FooterTextDataOne string `json:"FooterTextDataOne"`
-	FooterTextDataTwo string `json:"FooterTextDataTwo"`
+	Logo                  string `json:"logo"`
+	Title                 string `json:"title"`
+	Favicon               string `json:"favicon"`
+	FooterTitle           string `json:"FooterTitle"`
+	FooterTitleLink       string `json:"FooterTitleLink"`
+	FooterTextDataOne     string `json:"FooterTextDataOne"`
+	FooterTextDataTwo     string `json:"FooterTextDataTwo"`
 	FooterTextDataTwoLink string `json:"FooterTextDataTwoLink"`
 }
 
 type software struct {
-	Port string	`json:"port"`
+	Port string `json:"port"`
 }
 
 type Data struct {
-	Id int	`json:"id"`
+	Id    int    `json:"id"`
 	Title string `json:"title"`
 	Ico   string `json:"ico"`
 	WLink string `json:"w_link"`
 	NLink string `json:"n_link"`
+}
+
+type style struct {
+	Background  string `json:"background"`
+	AColor      string `json:"AColor"`
+	AColorHover string `json:"AColorHover"`
 }

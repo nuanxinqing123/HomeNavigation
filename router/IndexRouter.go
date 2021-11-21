@@ -14,4 +14,7 @@ import (
 func IndexRouter(index *gin.Engine) {
 	// 首页
 	index.GET("/", controllers.Index)
+
+	// 404路由
+	index.NoRoute(controllers.NoRouter)
 }

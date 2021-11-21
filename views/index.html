@@ -10,6 +10,18 @@
 		<link rel="shortcut icon" href="{{ .favicon }}">
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<title>{{ .title }}</title>
+		<style>
+			body{
+				background: url("{{ .Background }}") no-repeat;
+			}
+			.footer-contents a:hover {
+				color: {{ .AColorHover }}
+			}
+			a {
+				color: {{ .AColor }};
+				text-decoration: none
+			}
+		</style>
 	</head>
 	<body>
 		<div id="wrap">

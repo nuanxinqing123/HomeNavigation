@@ -97,5 +97,10 @@
       "w_link": "#",
       "n_link": "#"
     }
-  ]
+  ],
+  "Style": {
+    "Background": "img/bg.jpg",
+    "AColor": "black",
+    "AColorHover": "#87CEEB"
+  }
 }
