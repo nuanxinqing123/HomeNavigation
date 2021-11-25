@@ -1,1 +1,1 @@
-docker build -t home_navigation:1.3 .
+docker build -t nuanxinqing123/home_navigation:1.3 .
