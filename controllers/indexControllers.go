@@ -18,18 +18,14 @@ func Index(ctx *gin.Context) {
 
 	// 渲染前端
 	ctx.HTML(http.StatusOK, "index.html", gin.H{
-		"logo":                  Web.Config.Logo,
-		"title":                 Web.Config.Title,
-		"favicon":               Web.Config.Favicon,
-		"FooterTitle":           Web.Config.FooterTitle,
-		"FooterTitleLink":       Web.Config.FooterTitleLink,
-		"FooterTextDataOne":     Web.Config.FooterTextDataOne,
-		"FooterTextDataTwo":     Web.Config.FooterTextDataTwo,
-		"FooterTextDataTwoLink": Web.Config.FooterTextDataTwoLink,
-		"data":                  Web.Data,
-		"Background":            Web.Style.Background,
-		"AColor":                Web.Style.AColor,
-		"AColorHover":           Web.Style.AColorHover,
+		"logo":        Web.Index.Logo,
+		"title":       Web.Index.Title,
+		"favicon":     Web.Index.Favicon,
+		"data":        Web.Data,
+		"text":        Web.Footer,
+		"Background":  Web.FooterStyle.Background,
+		"AColor":      Web.FooterStyle.AColor,
+		"AColorHover": Web.FooterStyle.AColorHover,
 	})
 }
 

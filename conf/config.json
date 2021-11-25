@@ -1,13 +1,8 @@
 {
-  "Config": {
+  "Index": {
     "Logo": "img/logo.png",
     "Favicon": "img/favicon.ico",
-    "Title": "Cloud Services",
-    "FooterTitle": "陕ICP备XXXXXXXX号-1",
-    "FooterTitleLink": "https://beian.miit.gov.cn/",
-    "FooterTextDataOne": "Copyright © 2021",
-    "FooterTextDataTwo": "陆比柒",
-    "FooterTextDataTwoLink": "https://6b7.org/"
+    "Title": "Cloud Services"
   },
   "SoftWare": {
     "port": "8100"
@@ -31,7 +26,7 @@
       "id": 3,
       "title": "我的音乐",
       "ico": "img/png/Music.png",
-      "w_link": "#",
+      "w_link": "https://y.qq.com/",
       "n_link": "#"
     },
     {
@@ -98,7 +93,21 @@
       "n_link": "#"
     }
   ],
-  "Style": {
+  "Footer": [
+    {
+      "Text": "陕ICP备XXXXXXXX号-1",
+      "TextLink": "https://beian.miit.gov.cn/"
+    },
+    {
+      "Text": "Copyright © 2021",
+      "TextLink": ""
+    },
+    {
+      "Text": "陆比柒",
+      "TextLink": "https://6b7.org/"
+    }
+  ],
+  "FooterStyle": {
     "Background": "img/bg.jpg",
     "AColor": "black",
     "AColorHover": "#87CEEB"

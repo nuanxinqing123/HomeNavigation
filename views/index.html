@@ -1,7 +1,6 @@
 {{define "index.html"}}
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +12,7 @@
 		<style>
 			body{
 				background: url("{{ .Background }}") no-repeat;
+				background-size: cover;
 			}
 			.footer-contents a:hover {
 				color: {{ .AColorHover }}
@@ -57,24 +57,21 @@
 					</ul>
 				</div>
 				<div style="clear: both;"></div>
-			</div>
-		</div>
-		<div id="footer">
-			<div class="footer-contents">
-				<div class="links">
-					<div class="line">
-						<li>
-						<a href="{{.FooterTitleLink}}" target="_blank">{{.FooterTitle}}</a>&nbsp;&nbsp;&nbsp;
-						<span class="footer-link-separator"></span>&nbsp;&nbsp;&nbsp;
-						<span class="copyright">{{.FooterTextDataOne}}</span>
-						<span class="footer-link-separator"></span>&nbsp;&nbsp;&nbsp;
-						<a href="{{.FooterTextDataTwoLink}}" target="_blank"><span class="copyright">{{.FooterTextDataTwo}}</span></a>
-					</div>
+				<!-- 页脚 -->
+				<div style="text-align: center; margin: 40px 0 40px 0; font-family: MyriadSetPro-Thin;">
+					网站信息
+					{{range $d := .text}}
+							{{ if $d.TextLink }}
+								&ensp;&ensp;|&ensp;&ensp;<a href="{{ $d.TextLink }}">{{ $d.Text }}</a>
+							{{ else }}
+								&ensp;&ensp;|&ensp;&ensp;{{ $d.Text }}
+							{{end}}
+						</ul>
+					{{end}}
 				</div>
 			</div>
 		</div>
 		<script src="js/jquery.min.js"></script>
 	</body>
-
 </html>
 {{end}}

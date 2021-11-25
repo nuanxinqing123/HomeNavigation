@@ -26,16 +26,6 @@ docker run -itd --name HomeNavigation -v $PWD:/go/src/Gin_HomeNavigation/conf -p
     "Favicon": "img/favicon.ico",
     // 网站标题
     "Title": "Cloud Services",
-    // 网站底部标题
-    "FooterTitle": "陕ICP备xxxxxxxx号-1",
-    // 网站底部标题链接（可空）
-    "FooterTitleLink": "https://beian.miit.gov.cn/",
-    // 网站底部版权信息
-    "FooterTextDataOne": "Copyright © 2021",
-    // 网站底部其他文字（可随意自定义）
-    "FooterTextDataTwo": "百度",
-    // 网站底部其他文字链接（可空）
-    "FooterTextDataTwoLink": "https://www.baidu.com/"
   },
   "SoftWare": {
     // 程序运行端口（修改后重启生效）      
@@ -54,6 +44,13 @@ docker run -itd --name HomeNavigation -v $PWD:/go/src/Gin_HomeNavigation/conf -p
       // 内网访问地址（可空）  
       "n_link": "https://6b7.org/"
     },
+    "Footer": [     // 页脚网站信息，同上：可以使用 {} 增加显示项目，但是推荐不要超过3个
+      {
+        "Text": "",
+        // TextLink如果不需要可以空着，这样前端就不会渲染 a 标签
+        "TextLink": ""
+      }
+    ],
     "Style": {    // 不懂请勿配置此项
       // Web背景图片（推荐图床外链）
       "Background": "",
@@ -66,7 +63,8 @@ docker run -itd --name HomeNavigation -v $PWD:/go/src/Gin_HomeNavigation/conf -p
 }
 ```
 
-### 添加新的站点
+### 添加新的项目
+新站点
 ```json
     {
       "id": ,
@@ -76,6 +74,15 @@ docker run -itd --name HomeNavigation -v $PWD:/go/src/Gin_HomeNavigation/conf -p
       "n_link": ""
     }
 ```
+
+新页脚
+```json
+    {
+      "Text": "",
+      "TextLink": ""
+    }
+```
+
 如果需要添加新的站点到页面，请在Data的 `[ ]` 里面按照如上格式添加。
 
 **Tips：所有的 `{ }` 后面都需要添加一个英文逗号，除了最后一个 `{ }`**
@@ -88,6 +95,10 @@ docker run -itd --name HomeNavigation -v $PWD:/go/src/Gin_HomeNavigation/conf -p
 
 ### 版本通知
 ```text
+2021.11.25：V1.3
+1、修复CSS多项目加载错误（1.1遗留BUG）
+2、更改新的页脚显示方式（可自定义页脚信息Link）
+
 2021.11.21：V1.2
 1、增加空路由提示
 2、增加更多可以控制元素（自定义背景图、色）
