@@ -60,7 +60,6 @@ docker run -itd --name HomeNavigation -v $PWD:/go/src/Gin_HomeNavigation/conf -p
       }
     ],
     "FooterStyle":{
-      // 不懂请勿配置此项
       // Web背景图片（推荐图床外链）
       "Background": "",
       // 页脚文字颜色(支持颜色的英文单词和十六进制颜色值)
