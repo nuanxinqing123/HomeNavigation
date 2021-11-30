@@ -9,6 +9,8 @@ package main
 import (
 	"Gin_HomeNavigation/dataSource"
 	"Gin_HomeNavigation/router"
+	"github.com/gin-contrib/sessions"
+	"github.com/gin-contrib/sessions/cookie"
 	"github.com/gin-gonic/gin"
 	"log"
 )
@@ -32,6 +34,10 @@ func main() {
 		r.Static("img", "views/img")
 
 	}
+
+	//Session中间件
+	store := cookie.NewStore([]byte("userLogin"))
+	r.Use(sessions.Sessions("pt_Ket", store))
 
 	// 前端路由
 	router.IndexRouter(r)

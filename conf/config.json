@@ -5,7 +5,8 @@
     "Title": "Cloud Services"
   },
   "SoftWare": {
-    "port": "8100"
+    "port": "8100",
+    "password": "136729880"
   },
   "Data": [
     {
@@ -109,7 +110,6 @@
   ],
   "FooterStyle": {
     "Background": "img/bg.jpg",
-    "AColor": "black",
-    "AColorHover": "#87CEEB"
+    "AColor": "#01809E"
   }
 }

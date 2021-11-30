@@ -1,7 +1,9 @@
 ## 个人导航页
+
 程序的起因是因为家里申请了公网IP，因此购置了一套服务器在家里放着。但是方便操作和记忆，因为写了此导航来可以快速的从内网或者外网访问家里的某些服务
 
 ### Docker部署
+
 ```text
 // 第一步：创建映射文件夹并进入
 mkdir HNconfig && cd HNconfig
@@ -10,26 +12,30 @@ mkdir HNconfig && cd HNconfig
 wget https://ghproxy.com/https://github.com/nuanxinqing123/HomeNavigation/blob/master/conf/config.json
 
 // 第三步：运行Docker image
-docker run -itd --name HomeNavigation -v $PWD:/go/src/Gin_HomeNavigation/conf -p 8082:8100 nuanxinqing123/home_navigation:1.3
+docker run -itd --name HomeNavigation -v $PWD:/go/src/Gin_HomeNavigation/conf -p 8082:8100 nuanxinqing123/home_navigation:1.4
 ```
+
 好了，部署完成。如果需要修改前端的显示内容，直接修改 HNconfig/config.json里面的内容就好了。还有就是启动命令默认是8082端口，大家自行修改一下
 
 **Tips：因为版本更新可能会变动json文件。所以推荐更新之前先把原来的json文件修改名字，下载新的json文件之后把原来的内容再拷贝过去**
 
 ### config.json 文件
+
 ```json
 {
-  "Config": {
+  "Index": {
     // 网站LOGO（支持相对&绝对路径、支持图床外链）
     "Logo": "img/logo.png",
     // 网站ico（支持相对&绝对路径、支持图床外链）
     "Favicon": "img/favicon.ico",
     // 网站标题
-    "Title": "Cloud Services",
+    "Title": "Cloud Services"
   },
   "SoftWare": {
     // 程序运行端口（修改后重启生效）      
-    "port": "8100"
+    "port": "8100",
+    // 访问密码（“”留空代表关闭密码访问，实时生效）
+    "password": ""
   },
   "Data": [
     {
@@ -43,44 +49,47 @@ docker run -itd --name HomeNavigation -v $PWD:/go/src/Gin_HomeNavigation/conf -p
       "w_link": "https://6b7.org/",
       // 内网访问地址（可空）  
       "n_link": "https://6b7.org/"
-    },
-    "Footer": [     // 页脚网站信息，同上：可以使用 {} 增加显示项目，但是推荐不要超过3个
+    }
+  ],
+    "Footer":[
+      // 页脚网站信息，同上：可以使用 {} 增加显示项目，但是推荐不要超过3个
       {
         "Text": "",
         // TextLink如果不需要可以空着，这样前端就不会渲染 a 标签
         "TextLink": ""
       }
     ],
-    "Style": {    // 不懂请勿配置此项
+    "FooterStyle":{
+      // 不懂请勿配置此项
       // Web背景图片（推荐图床外链）
       "Background": "",
-      // 链接文字颜色(支持颜色的英文单词和十六进制颜色值)
-      "AColor": "",
-      // 链接文字悬浮颜色(支持颜色的英文单词和十六进制颜色值)
-      "AColorHover": ""
+      // 页脚文字颜色(支持颜色的英文单词和十六进制颜色值)
+      "AColor": ""
     }
-  ]
 }
 ```
 
 ### 添加新的项目
+
 新站点
+
 ```json
     {
-      "id": ,
-      "title": "",
-      "ico": "",
-      "w_link": "",
-      "n_link": ""
-    }
+  "id":,
+  "title": "",
+  "ico": "",
+  "w_link": "",
+  "n_link": ""
+}
 ```
 
 新页脚
+
 ```json
     {
-      "Text": "",
-      "TextLink": ""
-    }
+  "Text": "",
+  "TextLink": ""
+}
 ```
 
 如果需要添加新的站点到页面，请在Data的 `[ ]` 里面按照如上格式添加。
@@ -88,13 +97,20 @@ docker run -itd --name HomeNavigation -v $PWD:/go/src/Gin_HomeNavigation/conf -p
 **Tips：所有的 `{ }` 后面都需要添加一个英文逗号，除了最后一个 `{ }`**
 
 ### 配置文件说明
+
 以上配置文件是整个程序的所有配置项，由于程序采用JSON文件实时读取的方式，所以修改配置过后均可实时生效（除了端口需要重启生效）。
 
 ### 前端模板说明
+
 模板经过修改，原版模板来自于：http://www.wdmomo.fun:81/home/
 
 ### 版本通知
+
 ```text
+2021.11.30：V1.4
+1、修复背景图CSS兼容性问题
+2、增加访问密码选项（Cookie有效期30天, 留空代表关闭密码访问）
+
 2021.11.25：V1.3
 1、修复CSS多项目加载错误（1.1遗留BUG）
 2、更改新的页脚显示方式（可自定义页脚信息Link）
