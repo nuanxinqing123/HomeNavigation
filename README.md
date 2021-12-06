@@ -108,6 +108,9 @@ docker run -itd --name HomeNavigation -v $PWD:/go/src/Gin_HomeNavigation/conf -p
 ### 版本通知
 
 ```text
+2021.12.06：V1.5
+1、修复显示图片的一个错误
+
 2021.11.30：V1.4
 1、修复背景图CSS兼容性问题
 2、增加访问密码选项（Cookie有效期30天, 留空代表关闭密码访问）
