@@ -18,6 +18,7 @@ import (
 func main() {
 	// 控制 Debug / Release 版本
 	gin.SetMode(gin.ReleaseMode)
+	//gin.SetMode(gin.DebugMode)
 
 	// 创建
 	r := gin.Default()
