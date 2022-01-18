@@ -1,15 +1,26 @@
-FROM golang:1.17
+FROM golang:alpine AS builder
+
+ENV GO111MODULE=on \
+    CGO_ENABLED=0 \
+    GOOS=linux \
+    GOARCH=amd64
+    GOPROXY=https://goproxy.cn,direct
+
 MAINTAINER HomeNavigation "nuanxinqing@gmail.com"
+
 WORKDIR $GOPATH/src/Gin_HomeNavigation
+
 COPY . .
+
 ADD . ./
-#设置环境变量，开启go module和设置下载代理
-RUN go env -w GO111MODULE=on
-RUN go env -w GOPROXY=https://goproxy.cn,direct
 
 #增加缺失的包，移除没用的包
 RUN go mod tidy
 
 RUN go build -o Gin_HomeNavigation .
+
+FROM scratch
+
+COPY --from=builder Gin_HomeNavigation /
 
 CMD ["./Gin_HomeNavigation"]

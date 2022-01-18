@@ -108,6 +108,11 @@ docker run -itd --name HomeNavigation -v $PWD:/go/src/Gin_HomeNavigation/conf -p
 ### 版本通知
 
 ```text
+2022.01.18：V1.6(未打包)
+1、修复CSS错误部分
+2、README文档Docker部署增减全部文件夹映射，方便用户自行修改
+3、缩减Docker镜像体积
+
 2021.12.06：V1.5
 1、修复显示图片的一个错误
 
@@ -132,4 +137,10 @@ docker run -itd --name HomeNavigation -v $PWD:/go/src/Gin_HomeNavigation/conf -p
 2021.11.17：V1.0
 1、支持内网外网添加定义
 2、JSON文件动态加载全网页
+```
+
+### Q & A
+```text
+Q:能不能自定义图标下面文字的颜色，浅色背景下字看不清
+A:修改配置文件的 AColor 内容即可
 ```
