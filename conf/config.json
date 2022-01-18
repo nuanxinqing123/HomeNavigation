@@ -109,7 +109,7 @@
     }
   ],
   "FooterStyle": {
-    "Background": "img/bg.jpg",
-    "AColor": "#01809E"
+    "Background": "https://api.ixiaowai.cn/mcapi/mcapi.php",
+    "AColor": "#CC2E30"
   }
 }
