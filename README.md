@@ -108,10 +108,9 @@ docker run -itd --name HomeNavigation -v $PWD:/go/src/Gin_HomeNavigation/conf -p
 ### 版本通知
 
 ```text
-2022.01.18：V1.6(未打包)
+2022.01.18：V1.6
 1、修复CSS错误部分
-2、README文档Docker部署增减全部文件夹映射，方便用户自行修改
-3、大幅度缩减Docker镜像体积（15M+）
+2、大幅度缩减Docker镜像体积（15M+）
 
 2021.12.06：V1.5
 1、修复显示图片的一个错误
