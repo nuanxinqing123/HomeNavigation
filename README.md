@@ -14,7 +14,7 @@ mkdir HNconfig && cd HNconfig
 wget https://ghproxy.com/https://github.com/nuanxinqing123/HomeNavigation/blob/master/conf/config.json
 
 // 第三步：运行Docker image
-docker run -itd --name HomeNavigation -v $PWD:/go/src/Gin_HomeNavigation/conf -p 8082:8100 nuanxinqing123/home_navigation:1.5
+docker run -itd --name HomeNavigation -v $PWD:/go/src/Gin_HomeNavigation/conf -p 8082:8100 nuanxinqing123/home_navigation:1.6
 ```
 
 好了，部署完成。如果需要修改前端的显示内容，直接修改 HNconfig/config.json里面的内容就好了。还有就是启动命令默认是8082端口，大家自行修改一下
@@ -111,7 +111,7 @@ docker run -itd --name HomeNavigation -v $PWD:/go/src/Gin_HomeNavigation/conf -p
 2022.01.18：V1.6(未打包)
 1、修复CSS错误部分
 2、README文档Docker部署增减全部文件夹映射，方便用户自行修改
-3、缩减Docker镜像体积
+3、大幅度缩减Docker镜像体积（15M+）
 
 2021.12.06：V1.5
 1、修复显示图片的一个错误
@@ -143,4 +143,10 @@ docker run -itd --name HomeNavigation -v $PWD:/go/src/Gin_HomeNavigation/conf -p
 ```text
 Q:能不能自定义图标下面文字的颜色，浅色背景下字看不清
 A:修改配置文件的 AColor 内容即可
+
+Q:能不能自定义前端HTML部分
+A:服务器部署用户可以直接修改views目录的文件，Docker用户推荐clone源码修改，然后使用make_image.sh打包源码
+
+Q:有没有Arm架构的版本
+A:暂时没有打包，需要自行Clone源码并编译
 ```
