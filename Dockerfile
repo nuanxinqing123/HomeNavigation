@@ -21,6 +21,6 @@ RUN go build -o Gin_HomeNavigation .
 
 FROM scratch
 
-COPY --from=builder Gin_HomeNavigation /
+COPY --from=builder $GOPATH/src/Gin_HomeNavigation/Gin_HomeNavigation /
 
-CMD ["./Gin_HomeNavigation"]
+ENTRYPOINT  ["./Gin_HomeNavigation"]
