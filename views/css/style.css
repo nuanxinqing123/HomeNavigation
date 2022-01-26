@@ -4001,3 +4001,7 @@ ul li a strong {
 	box-shadow: 0px 15px 25px rgba(0, 0, 0, .3);
 	border-radius: 15px;
 }
+
+@media screen and (max-width:420px){.box{width:360px;}}
+
+@media screen and (max-width:365px){.box{width:340px;}}
