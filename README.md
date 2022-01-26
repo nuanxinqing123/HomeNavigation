@@ -14,7 +14,7 @@ mkdir HNconfig && cd HNconfig
 wget https://ghproxy.com/https://github.com/nuanxinqing123/HomeNavigation/blob/master/conf/config.json
 
 // 第三步：运行Docker image
-docker run -itd --name HomeNavigation -v $PWD:/go/src/Gin_HomeNavigation/conf -p 8082:8100 nuanxinqing123/home_navigation:1.6
+docker run -itd --name HomeNavigation -v $PWD:/conf -p 8082:8100 nuanxinqing123/home_navigation:1.6
 ```
 
 好了，部署完成。如果需要修改前端的显示内容，直接修改 HNconfig/config.json里面的内容就好了。还有就是启动命令默认是8082端口，大家自行修改一下
@@ -148,4 +148,7 @@ A:服务器部署用户可以直接修改views目录的文件，Docker用户推�
 
 Q:有没有Arm架构的版本
 A:暂时没有打包，需要自行Clone源码并编译
+
+Q:如何自己定义上传图片？
+A:我没有做本地图片文件夹的映射，主要是想节省空间。推荐大家使用图床（推荐我的个人图床：https://img.6b7.xyz）
 ```
