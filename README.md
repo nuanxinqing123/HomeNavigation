@@ -4,7 +4,13 @@
 
 演示地址：https://navigation.6b7.org/
 
-### Docker部署
+### docker-compose安装
+
+```shell
+sudo curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+```
+
+### docker-compose部署
 
 ```text
 // 第一步：克隆仓库并进入
