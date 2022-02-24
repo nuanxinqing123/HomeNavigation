@@ -37,7 +37,9 @@ docker run -itd --name HomeNavigation -v $PWD:/conf -p 8082:8100 nuanxinqing123/
     // 程序运行端口（修改后重启生效）      
     "port": "8100",
     // 访问密码（“”留空代表关闭密码访问，实时生效）
-    "password": ""
+    "password": "",
+    // 内外网模式【N为内网，W为外网（大写 & 必填）】
+    "Mode": ""
   },
   "Data": [
     {
@@ -64,8 +66,12 @@ docker run -itd --name HomeNavigation -v $PWD:/conf -p 8082:8100 nuanxinqing123/
     "FooterStyle":{
       // Web背景图片（推荐图床外链）
       "Background": "",
+      // LOGO下方文字颜色(支持颜色的英文单词和十六进制颜色值)
+      "LColor": "#E1DFCD",
+      // 图标下方文字颜色(支持颜色的英文单词和十六进制颜色值)
+      "SColor": "#E1DFCD",
       // 页脚文字颜色(支持颜色的英文单词和十六进制颜色值)
-      "AColor": ""
+      "FColor": "#E1DFCD"
     }
 }
 ```
@@ -108,6 +114,11 @@ docker run -itd --name HomeNavigation -v $PWD:/conf -p 8082:8100 nuanxinqing123/
 ### 版本通知
 
 ```text
+2022.02.24：V1.7
+1、新增内外网首显控制开关
+2、新增LOGO文字、图标文字颜色控制
+3、优化Docker部署方式（支持配置文件自动导出）
+
 2022.01.26：V1.6
 1、修复CSS错误部分
 2、大幅度缩减Docker镜像体积（15M+）

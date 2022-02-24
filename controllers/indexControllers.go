@@ -8,10 +8,11 @@ package controllers
 
 import (
 	"Gin_HomeNavigation/dataSource"
-	"github.com/gin-contrib/sessions"
-	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
+
+	"github.com/gin-contrib/sessions"
+	"github.com/gin-gonic/gin"
 )
 
 // Index 首页
@@ -26,10 +27,13 @@ func Index(ctx *gin.Context) {
 			"logo":       Web.Index.Logo,
 			"title":      Web.Index.Title,
 			"favicon":    Web.Index.Favicon,
+			"mode":       Web.SoftWare.Mode,
 			"data":       Web.Data,
 			"text":       Web.Footer,
 			"Background": Web.FooterStyle.Background,
-			"AColor":     Web.FooterStyle.AColor,
+			"LColor":     Web.FooterStyle.LColor,
+			"SColor":     Web.FooterStyle.SColor,
+			"FColor":     Web.FooterStyle.FColor,
 			"IsLogin":    1,
 		})
 	} else {
@@ -44,10 +48,13 @@ func Index(ctx *gin.Context) {
 				"logo":       Web.Index.Logo,
 				"title":      Web.Index.Title,
 				"favicon":    Web.Index.Favicon,
+				"mode":       Web.SoftWare.Mode,
 				"data":       Web.Data,
 				"text":       Web.Footer,
 				"Background": Web.FooterStyle.Background,
-				"AColor":     Web.FooterStyle.AColor,
+				"LColor":     Web.FooterStyle.LColor,
+				"SColor":     Web.FooterStyle.SColor,
+				"FColor":     Web.FooterStyle.FColor,
 				"IsLogin":    isLogin,
 			})
 		} else {
@@ -58,7 +65,9 @@ func Index(ctx *gin.Context) {
 				"favicon":    Web.Index.Favicon,
 				"text":       Web.Footer,
 				"Background": Web.FooterStyle.Background,
-				"AColor":     Web.FooterStyle.AColor,
+				"LColor":     Web.FooterStyle.LColor,
+				"SColor":     Web.FooterStyle.SColor,
+				"FColor":     Web.FooterStyle.FColor,
 			})
 		}
 	}

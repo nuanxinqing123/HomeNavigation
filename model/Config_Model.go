@@ -24,6 +24,7 @@ type conf struct {
 type software struct {
 	Port     string `json:"port"`
 	Password string `json:"password"`
+	Mode     string `json:"mode"`
 }
 
 type Data struct {
@@ -41,5 +42,7 @@ type footer struct {
 
 type style struct {
 	Background string `json:"background"`
-	AColor     string `json:"AColor"`
+	LColor     string `json:"LColor"`
+	SColor     string `json:"SColor"`
+	FColor     string `json:"FColor"`
 }

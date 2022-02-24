@@ -1,0 +1,9 @@
+version: '2'
+services:
+  web:
+    image: nuanxinqing123/home_navigation:latest
+    volumes:
+      - $PWD:/conf
+    ports:
+      - "0.0.0.0:8082:8100"
+    restart: unless-stopped
