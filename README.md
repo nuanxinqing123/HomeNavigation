@@ -158,7 +158,7 @@ docker-compose down
 ### Q & A
 ```text
 Q:能不能自定义图标下面文字的颜色，浅色背景下字看不清
-A:修改配置文件的 AColor 内容即可
+A:修改配置文件的 LColor、SColor、FColor 内容即可
 
 Q:能不能自定义前端HTML部分
 A:服务器部署用户可以直接修改views目录的文件，Docker用户推荐clone源码修改，然后使用make_image.sh打包源码
