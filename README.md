@@ -7,17 +7,17 @@
 ### Docker部署
 
 ```text
-// 第一步：创建映射文件夹并进入
-mkdir HNconfig && cd HNconfig
+// 第一步：克隆仓库并进入
+git clone https://github.com/nuanxinqing123/HomeNavigation && cd HomeNavigation
 
-// 第二步：下载配置文件
-wget https://ghproxy.com/https://github.com/nuanxinqing123/HomeNavigation/blob/master/conf/config.json
-
-// 第三步：运行Docker image
-docker run -itd --name HomeNavigation -v $PWD:/conf -p 8082:8100 nuanxinqing123/home_navigation:1.6
+// 第二步：运行Docker
+# 启动
+docker-compose up -d
+# 停止
+docker-compose down
 ```
 
-好了，部署完成。如果需要修改前端的显示内容，直接修改 HNconfig/config.json里面的内容就好了。还有就是启动命令默认是8082端口，大家自行修改一下
+好了，部署完成。如果需要修改前端的显示内容，直接修改 conf/config.json里面的内容就好了。还有就是启动命令默认是8082端口，大家自行修改一下
 
 **Tips：因为版本更新可能会变动json文件。所以推荐更新之前先把原来的json文件修改名字，下载新的json文件之后把原来的内容再拷贝过去**
 
@@ -117,7 +117,7 @@ docker run -itd --name HomeNavigation -v $PWD:/conf -p 8082:8100 nuanxinqing123/
 2022.02.24：V1.7
 1、新增内外网首显控制开关
 2、新增LOGO文字、图标文字颜色控制
-3、优化Docker部署方式（支持配置文件自动导出）
+3、更换docker-compose.yml部署方式
 
 2022.01.26：V1.6
 1、修复CSS错误部分
