@@ -26,13 +26,13 @@ func main() {
 	//加载静态文件
 	{
 		// HTML文件
-		r.LoadHTMLFiles("./views/index.html")
+		r.LoadHTMLFiles("/app/views/index.html")
 		// CSS
-		r.Static("css", "views/css")
+		r.Static("css", "/app/views/css")
 		// JS
-		r.Static("js", "views/js")
+		r.Static("js", "/app/views/js")
 		// IMG
-		r.Static("img", "views/img")
+		r.Static("img", "/app/views/img")
 
 	}
 

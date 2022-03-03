@@ -19,7 +19,7 @@ func LoadConfig() *model.Config {
 	config := model.Config{}
 
 	// 打开文件
-	file ,err := os.Open("conf/config.json")
+	file ,err := os.Open("/app/conf/config.json")
 	if err != nil {
 		// 打开文件时发生错误
 		log.Println("An error occurred while opening the file")
