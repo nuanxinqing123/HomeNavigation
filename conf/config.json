@@ -5,7 +5,7 @@
     "Title": "Cloud Services"
   },
   "SoftWare": {
-    "port": "8100",
+    "port": "80",
     "password": "",
     "Mode": "W"
   },

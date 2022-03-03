@@ -17,12 +17,18 @@ ADD . ./
 #增加缺失的包，移除没用的包
 RUN go mod tidy
 
-RUN go build -o Gin_HomeNavigation .
+RUN go build -o main .
 
-FROM scratch
+FROM alpine:latest
 
-COPY --from=builder go/src/Gin_HomeNavigation/conf /conf
-COPY --from=builder go/src/Gin_HomeNavigation/views /views
-COPY --from=builder go/src/Gin_HomeNavigation/Gin_HomeNavigation /
+COPY --from=builder go/src/Gin_HomeNavigation/conf /app/conf
+COPY --from=builder go/src/Gin_HomeNavigation/views /app/views
+COPY --from=builder go/src/Gin_HomeNavigation/main /app
+COPY --from=builder go/src/Gin_HomeNavigation/start.sh /
 
-ENTRYPOINT  ["./Gin_HomeNavigation"]
+RUN mkdir /datas&&cp -ra /app/* /datas&&rm -rf /app
+
+VOLUME /app
+RUN chmod +x /start.sh
+
+ENTRYPOINT  ["/start.sh"]
