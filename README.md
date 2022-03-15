@@ -86,6 +86,10 @@ docker-compose down
     "FooterStyle":{
       // Web背景图片（推荐图床外链）
       "Background": "",
+      // 渐变色背景(支持颜色的英文单词和十六进制颜色值)
+      // 当Background值为空时, 启用渐变值
+      "BackgroundColorA": "#acb6e5",
+      "BackgroundColorB": "#86fde8",
       // LOGO下方文字颜色(支持颜色的英文单词和十六进制颜色值)
       "LColor": "#E1DFCD",
       // 图标下方文字颜色(支持颜色的英文单词和十六进制颜色值)
