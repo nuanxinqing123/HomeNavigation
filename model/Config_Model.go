@@ -43,8 +43,10 @@ type footer struct {
 }
 
 type style struct {
-	Background string `json:"background"`
-	LColor     string `json:"LColor"`
-	SColor     string `json:"SColor"`
-	FColor     string `json:"FColor"`
+	Background       string `json:"background"`
+	BackgroundColorA string `json:"BackgroundColorA"`
+	BackgroundColorB string `json:"BackgroundColorB"`
+	LColor           string `json:"LColor"`
+	SColor           string `json:"SColor"`
+	FColor           string `json:"FColor"`
 }

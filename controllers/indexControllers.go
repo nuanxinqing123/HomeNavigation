@@ -36,17 +36,19 @@ func WebData(c *gin.Context) {
 
 	if Web.SoftWare.Password == "" {
 		res.ResSuccess(c, gin.H{
-			"logo":       Web.Index.Logo,
-			"title":      Web.Index.Title,
-			"favicon":    Web.Index.Favicon,
-			"mode":       Web.SoftWare.Mode,
-			"web_data":   Web.Data,
-			"text":       Web.Footer,
-			"Background": Web.FooterStyle.Background,
-			"LColor":     Web.FooterStyle.LColor,
-			"SColor":     Web.FooterStyle.SColor,
-			"FColor":     Web.FooterStyle.FColor,
-			"IsLogin":    1,
+			"logo":             Web.Index.Logo,
+			"title":            Web.Index.Title,
+			"favicon":          Web.Index.Favicon,
+			"mode":             Web.SoftWare.Mode,
+			"web_data":         Web.Data,
+			"text":             Web.Footer,
+			"Background":       Web.FooterStyle.Background,
+			"BackgroundColorA": Web.FooterStyle.BackgroundColorA,
+			"BackgroundColorB": Web.FooterStyle.BackgroundColorB,
+			"LColor":           Web.FooterStyle.LColor,
+			"SColor":           Web.FooterStyle.SColor,
+			"FColor":           Web.FooterStyle.FColor,
+			"IsLogin":          1,
 		})
 	} else {
 		res.ResError(c, res.CodeNeedLogin)
@@ -59,17 +61,19 @@ func PwdWebData(c *gin.Context) {
 	Web := dataSource.LoadConfig()
 
 	res.ResSuccess(c, gin.H{
-		"logo":       Web.Index.Logo,
-		"title":      Web.Index.Title,
-		"favicon":    Web.Index.Favicon,
-		"mode":       Web.SoftWare.Mode,
-		"web_data":   Web.Data,
-		"text":       Web.Footer,
-		"Background": Web.FooterStyle.Background,
-		"LColor":     Web.FooterStyle.LColor,
-		"SColor":     Web.FooterStyle.SColor,
-		"FColor":     Web.FooterStyle.FColor,
-		"IsLogin":    1,
+		"logo":             Web.Index.Logo,
+		"title":            Web.Index.Title,
+		"favicon":          Web.Index.Favicon,
+		"mode":             Web.SoftWare.Mode,
+		"web_data":         Web.Data,
+		"text":             Web.Footer,
+		"Background":       Web.FooterStyle.Background,
+		"BackgroundColorA": Web.FooterStyle.BackgroundColorA,
+		"BackgroundColorB": Web.FooterStyle.BackgroundColorB,
+		"LColor":           Web.FooterStyle.LColor,
+		"SColor":           Web.FooterStyle.SColor,
+		"FColor":           Web.FooterStyle.FColor,
+		"IsLogin":          1,
 	})
 }
 
@@ -79,14 +83,16 @@ func LoginData(c *gin.Context) {
 	Web := dataSource.LoadConfig()
 
 	res.ResSuccess(c, gin.H{
-		"logo":       Web.Index.Logo,
-		"title":      Web.Index.Title,
-		"favicon":    Web.Index.Favicon,
-		"text":       Web.Footer,
-		"Background": Web.FooterStyle.Background,
-		"LColor":     Web.FooterStyle.LColor,
-		"SColor":     Web.FooterStyle.SColor,
-		"FColor":     Web.FooterStyle.FColor,
+		"logo":             Web.Index.Logo,
+		"title":            Web.Index.Title,
+		"favicon":          Web.Index.Favicon,
+		"text":             Web.Footer,
+		"Background":       Web.FooterStyle.Background,
+		"BackgroundColorA": Web.FooterStyle.BackgroundColorA,
+		"BackgroundColorB": Web.FooterStyle.BackgroundColorB,
+		"LColor":           Web.FooterStyle.LColor,
+		"SColor":           Web.FooterStyle.SColor,
+		"FColor":           Web.FooterStyle.FColor,
 	})
 }
 
