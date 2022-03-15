@@ -1,96 +1,98 @@
 {
   "Index": {
-    "Logo": "img/logo.png",
-    "Favicon": "img/favicon.ico",
+    "Logo": "https://pic.6b7.xyz/2022/03/06/1f48ba24e4949.ico",
+    "Favicon": "https://pic.6b7.xyz/2022/03/06/1f48ba24e4949.ico",
     "Title": "Cloud Services"
   },
   "SoftWare": {
-    "port": "8100",
+    "port": 8100,
     "password": "",
-    "Mode": "W"
+    "Mode": "W",
+    "Debug": "",
+    "LogLevel": "info"
   },
   "Data": [
     {
       "id": 1,
       "title": "我的博客",
-      "ico": "img/png/AppStore.png",
+      "ico": "https://pic.6b7.xyz/2022/03/07/df34301c829c7.png",
       "w_link": "https://6b7.org/",
       "n_link": "https://6b7.org/"
     },
     {
       "id": 2,
       "title": "我的网盘",
-      "ico": "img/png/iCloud-Drive.png",
+      "ico": "https://pic.6b7.xyz/2022/03/07/ff5b38c0e5d69.png",
       "w_link": "https://alist.6b7.org/",
       "n_link": "https://alist.6b7.org/"
     },
     {
       "id": 3,
       "title": "我的音乐",
-      "ico": "img/png/Music.png",
+      "ico": "https://pic.6b7.xyz/2022/03/07/e423b98fc37fe.png",
       "w_link": "https://y.qq.com/",
       "n_link": "#"
     },
     {
       "id": 4,
       "title": "我的相册",
-      "ico": "img/png/Photos.png",
+      "ico": "https://pic.6b7.xyz/2022/03/07/384785b7e656a.png",
       "w_link": "#",
       "n_link": "#"
     },
     {
       "id": 5,
       "title": "我的视频",
-      "ico": "img/png/Videos.png",
+      "ico": "https://pic.6b7.xyz/2022/03/07/cf55fe76b2d73.png",
       "w_link": "#",
       "n_link": "#"
     },
     {
       "id": 6,
       "title": "远程迅雷",
-      "ico": "img/png/Thunder.png",
+      "ico": "https://pic.6b7.xyz/2022/03/07/ebd5ae0c4f028.png",
       "w_link": "#",
       "n_link": "#"
     },
     {
       "id": 7,
       "title": "我的下载",
-      "ico": "img/png/Downloads.png",
+      "ico": "https://pic.6b7.xyz/2022/03/07/6fd1a29c365b0.png",
       "w_link": "#",
       "n_link": "#"
     },
     {
       "id": 8,
       "title": "我的设置",
-      "ico": "img/png/Settings.png",
+      "ico": "https://pic.6b7.xyz/2022/03/07/dea6c2d1c0d25.png",
       "w_link": "#",
       "n_link": "#"
     },
     {
       "id": 9,
       "title": "BT下载",
-      "ico": "img/png/Transmission.png",
+      "ico": "https://pic.6b7.xyz/2022/03/07/3106ed43120b8.png",
       "w_link": "https://alist.6b7.org/",
       "n_link": "https://alist.6b7.org/"
     },
     {
       "id": 10,
       "title": "NAS管理",
-      "ico": "img/png/FontExplorer-X.png",
+      "ico": "https://pic.6b7.xyz/2022/03/07/7b2035e938882.png",
       "w_link": "#",
       "n_link": "#"
     },
     {
       "id": 11,
       "title": "管理路由",
-      "ico": "img/png/Podcats.png",
+      "ico": "https://pic.6b7.xyz/2022/03/07/0056f7e81d762.png",
       "w_link": "#",
       "n_link": "#"
     },
     {
       "id": 12,
       "title": "监听监控",
-      "ico": "img/png/FaceTime.png",
+      "ico": "https://pic.6b7.xyz/2022/03/07/ee4ce0ead6330.png",
       "w_link": "#",
       "n_link": "#"
     }
@@ -111,6 +113,8 @@
   ],
   "FooterStyle": {
     "Background": "https://pic.6b7.xyz/2021/11/26/167cad24ee06f.png",
+    "BackgroundColorA": "#acb6e5",
+    "BackgroundColorB": "#86fde8",
     "LColor": "#FFF",
     "SColor": "#FFF",
     "FColor": "black"
