@@ -55,7 +55,11 @@ docker-compose down
     // 访问密码（“”留空代表关闭密码访问，实时生效）
     "password": "",
     // 内外网模式【N为内网，W为外网（大写 & 必填）】
-    "Mode": ""
+    "Mode": "",
+    // 是否开启Debug
+    "Debug": "",
+    // 日志等级
+    "LogLevel": "info"
   },
   "Data": [
     {
