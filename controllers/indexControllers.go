@@ -8,27 +8,39 @@ package controllers
 
 import (
 	"Gin_HomeNavigation/dataSource"
-	"log"
+	"Gin_HomeNavigation/tools/jwt"
+	res "Gin_HomeNavigation/tools/response"
+	val "Gin_HomeNavigation/tools/validator"
 	"net/http"
 
-	"github.com/gin-contrib/sessions"
+	"github.com/go-playground/validator/v10"
+
+	"go.uber.org/zap"
+
 	"github.com/gin-gonic/gin"
 )
 
-// Index 首页
-func Index(ctx *gin.Context) {
+type Pwd struct {
+	Password string `json:"password" binding:"required"`
+}
+
+// NoRouter 空路由
+func NoRouter(ctx *gin.Context) {
+	ctx.String(http.StatusOK, "The visit address does not exist, please return to the homepage")
+}
+
+// WebData 无密码数据
+func WebData(c *gin.Context) {
 	// 加载配置
 	Web := dataSource.LoadConfig()
 
-	// 判断是否启用密码登录
 	if Web.SoftWare.Password == "" {
-		// 渲染前端
-		ctx.HTML(http.StatusOK, "index.html", gin.H{
+		res.ResSuccess(c, gin.H{
 			"logo":       Web.Index.Logo,
 			"title":      Web.Index.Title,
 			"favicon":    Web.Index.Favicon,
 			"mode":       Web.SoftWare.Mode,
-			"data":       Web.Data,
+			"web_data":   Web.Data,
 			"text":       Web.Footer,
 			"Background": Web.FooterStyle.Background,
 			"LColor":     Web.FooterStyle.LColor,
@@ -37,68 +49,100 @@ func Index(ctx *gin.Context) {
 			"IsLogin":    1,
 		})
 	} else {
-		// 启用密码登录，判断Session
-		// 获取Session，判断用户是否登录
-		isLogin := GetSession(ctx)
-
-		if isLogin == true {
-			// 已登录
-			// 渲染前端
-			ctx.HTML(http.StatusOK, "index.html", gin.H{
-				"logo":       Web.Index.Logo,
-				"title":      Web.Index.Title,
-				"favicon":    Web.Index.Favicon,
-				"mode":       Web.SoftWare.Mode,
-				"data":       Web.Data,
-				"text":       Web.Footer,
-				"Background": Web.FooterStyle.Background,
-				"LColor":     Web.FooterStyle.LColor,
-				"SColor":     Web.FooterStyle.SColor,
-				"FColor":     Web.FooterStyle.FColor,
-				"IsLogin":    isLogin,
-			})
-		} else {
-			// 未登录
-			ctx.HTML(http.StatusOK, "index.html", gin.H{
-				"logo":       Web.Index.Logo,
-				"title":      Web.Index.Title,
-				"favicon":    Web.Index.Favicon,
-				"text":       Web.Footer,
-				"Background": Web.FooterStyle.Background,
-				"LColor":     Web.FooterStyle.LColor,
-				"SColor":     Web.FooterStyle.SColor,
-				"FColor":     Web.FooterStyle.FColor,
-			})
-		}
+		res.ResError(c, res.CodeNeedLogin)
 	}
 }
 
-// Login 登录
-func Login(ctx *gin.Context) {
+// PwdWebData 网站数据
+func PwdWebData(c *gin.Context) {
 	// 加载配置
 	Web := dataSource.LoadConfig()
 
-	pwd := ctx.PostForm("password")
-	if Web.SoftWare.Password != pwd {
-		ctx.JSON(http.StatusOK, gin.H{
-			// 密码错误
-			"msg": "Wrong Password",
-		})
-	} else {
-		session := sessions.Default(ctx)
-		session.Set("userLogin", Web.SoftWare.Password)
-		err := session.Save()
-		if err != nil {
-			log.Println(err)
+	res.ResSuccess(c, gin.H{
+		"logo":       Web.Index.Logo,
+		"title":      Web.Index.Title,
+		"favicon":    Web.Index.Favicon,
+		"mode":       Web.SoftWare.Mode,
+		"web_data":   Web.Data,
+		"text":       Web.Footer,
+		"Background": Web.FooterStyle.Background,
+		"LColor":     Web.FooterStyle.LColor,
+		"SColor":     Web.FooterStyle.SColor,
+		"FColor":     Web.FooterStyle.FColor,
+		"IsLogin":    1,
+	})
+}
+
+// LoginData 登录数据
+func LoginData(c *gin.Context) {
+	// 加载配置
+	Web := dataSource.LoadConfig()
+
+	res.ResSuccess(c, gin.H{
+		"logo":       Web.Index.Logo,
+		"title":      Web.Index.Title,
+		"favicon":    Web.Index.Favicon,
+		"text":       Web.Footer,
+		"Background": Web.FooterStyle.Background,
+		"LColor":     Web.FooterStyle.LColor,
+		"SColor":     Web.FooterStyle.SColor,
+		"FColor":     Web.FooterStyle.FColor,
+	})
+}
+
+// Login 登录
+func Login(c *gin.Context) {
+	// 加载配置
+	Web := dataSource.LoadConfig()
+
+	// 获取参数
+	p := new(Pwd)
+	if err := c.ShouldBindJSON(&p); err != nil {
+		// 参数校验
+		zap.L().Error("SignInHandle with invalid param", zap.Error(err))
+
+		// 判断err是不是validator.ValidationErrors类型
+		errs, ok := err.(validator.ValidationErrors)
+		if !ok {
+			res.ResError(c, res.CodeInvalidParam)
 			return
 		}
 
-		// 下放Session, 301跳转
-		ctx.Redirect(http.StatusMovedPermanently, "/")
+		// 翻译错误
+		res.ResErrorWithMsg(c, res.CodeInvalidParam, val.RemoveTopStruct(errs.Translate(val.Trans)))
+		return
+	}
+
+	if Web.SoftWare.Password != p.Password {
+		res.ResError(c, res.CodePassWordWrong)
+		return
+	} else {
+		// 密码正确, 生成Token并返回
+		token, err := jwt.GenToken(p.Password)
+		if err != nil {
+			zap.L().Error("Error: 生成JWT发生错误")
+			res.ResError(c, res.CodeServerBusy)
+			return
+		}
+
+		res.ResSuccess(c, gin.H{
+			"Token": token,
+		})
 	}
 }
 
-// NoRouter 空路由
-func NoRouter(ctx *gin.Context) {
-	ctx.String(http.StatusOK, "The visit address does not exist, please return to the homepage")
+// LoginF 登录路径
+func LoginF(c *gin.Context) {
+	// 加载配置
+	Web := dataSource.LoadConfig()
+
+	if Web.SoftWare.Password == "" {
+		res.ResSuccess(c, gin.H{
+			"IsLogin": 0,
+		})
+	} else {
+		res.ResSuccess(c, gin.H{
+			"IsLogin": 1,
+		})
+	}
 }

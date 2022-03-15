@@ -22,9 +22,11 @@ type conf struct {
 }
 
 type software struct {
-	Port     string `json:"port"`
+	Port     int    `json:"port"`
 	Password string `json:"password"`
 	Mode     string `json:"mode"`
+	Debug    string `json:"Debug"`
+	LogLeveL string `json:"LogLevel"`
 }
 
 type Data struct {
