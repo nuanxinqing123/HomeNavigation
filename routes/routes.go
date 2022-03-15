@@ -9,6 +9,7 @@ package routes
 import (
 	"Gin_HomeNavigation/bindata"
 	"Gin_HomeNavigation/controllers"
+	"Gin_HomeNavigation/logger"
 	"Gin_HomeNavigation/middleware"
 	"html/template"
 	"strings"
@@ -19,11 +20,11 @@ import (
 )
 
 func Setup() *gin.Engine {
-	r := gin.Default()
-	//r := gin.New()
+	//r := gin.Default()
+	r := gin.New()
 
 	// 配置Gin日志
-	//r.Use(logger.GinLogger(), logger.GinRecovery(true))
+	r.Use(logger.GinLogger(), logger.GinRecovery(true))
 
 	// 前端组
 	{
