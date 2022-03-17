@@ -1,4 +1,4 @@
-FROM golang:alpine AS builder
+FROM amd64/golang:latest AS builder
 
 ENV GO111MODULE=on \
     CGO_ENABLED=0 \
@@ -22,7 +22,7 @@ RUN go build -o Gin_HomeNavigation .
 FROM scratch
 
 COPY --from=builder go/src/Gin_HomeNavigation/conf /conf
-COPY --from=builder go/src/Gin_HomeNavigation/views /views
+COPY --from=builder go/src/Gin_HomeNavigation/img /img
 COPY --from=builder go/src/Gin_HomeNavigation/Gin_HomeNavigation /
 
 ENTRYPOINT  ["./Gin_HomeNavigation"]

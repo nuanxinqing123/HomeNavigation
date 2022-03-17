@@ -4,7 +4,7 @@ services:
     image: nuanxinqing123/home_navigation:latest
     volumes:
       - $PWD/conf:/conf
-      - $PWD/views:/views
+      - $PWD/img:/img
     ports:
       - "0.0.0.0:8082:8100"
     restart: unless-stopped
