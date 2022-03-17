@@ -9,6 +9,7 @@ package routes
 import (
 	"Gin_HomeNavigation/bindata"
 	"Gin_HomeNavigation/controllers"
+	"Gin_HomeNavigation/dataSource"
 	"Gin_HomeNavigation/logger"
 	"Gin_HomeNavigation/middleware"
 	"html/template"
@@ -20,11 +21,16 @@ import (
 )
 
 func Setup() *gin.Engine {
-	//r := gin.Default()
+	// 加载配置文件
+	conf := dataSource.LoadConfig()
 	r := gin.New()
 
-	// 配置Gin日志
-	r.Use(logger.GinLogger(), logger.GinRecovery(true))
+	if conf.SoftWare.Debug == "debug" {
+		r = gin.Default()
+	} else {
+		// 配置Gin日志
+		r.Use(logger.GinLogger(), logger.GinRecovery(true))
+	}
 
 	// 前端组
 	{
@@ -47,6 +53,9 @@ func Setup() *gin.Engine {
 		r.GET("/", func(c *gin.Context) {
 			c.HTML(200, "index.html", nil)
 		})
+
+		// 本地图片接口
+		r.Static("img", "img")
 	}
 
 	// 公共权限组
