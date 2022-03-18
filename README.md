@@ -4,6 +4,14 @@
 
 演示地址：https://navigation.6b7.org/
 
+### Docker部署
+```bash
+git clone https://github.com/nuanxinqing123/HomeNavigation.git
+cd HomeNavigation
+docker build -t HomeNavigation:latest .
+docker run -itd --name=HomeNavigation -v $PWD/conf:/conf $PWD/img:/img -p 8100:8100 HomeNavigation:latest
+```
+
 ### docker-compose安装
 
 ```shell
