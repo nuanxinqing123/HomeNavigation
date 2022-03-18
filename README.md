@@ -9,7 +9,7 @@
 git clone https://github.com/nuanxinqing123/HomeNavigation.git
 cd HomeNavigation
 docker build -t nav:latest .
-docker run -itd --name=HomeNavigation -v $PWD/conf:/conf $PWD/img:/img -p 8100:8100 nav:latest
+docker run -itd --name=index -v $PWD/conf:/conf $PWD/img:/img -p 8100:8100 nav:latest
 ```
 
 ### docker-compose安装
