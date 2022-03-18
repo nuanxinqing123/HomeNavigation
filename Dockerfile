@@ -25,6 +25,6 @@ COPY --from=builder go/src/Gin_HomeNavigation/conf /datas/conf
 COPY --from=builder go/src/Gin_HomeNavigation/img /datas/img
 COPY --from=builder go/src/Gin_HomeNavigation/Gin_HomeNavigation /
 COPY --from=builder go/src/Gin_HomeNavigation/start.sh /start.sh
-VOLUME [ "/conf","/img"]
+VOLUME [ "/conf","/img","/nav.log"]
 EXPOSE 80
 ENTRYPOINT  ["/start.sh"]
