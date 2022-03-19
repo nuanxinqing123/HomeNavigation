@@ -6,7 +6,7 @@ ENV GO111MODULE=on \
     GOARCH=amd64 \
     GOPROXY=https://goproxy.cn,direct
 
-MAINTAINER HomeNavigation "nuanxinqing@gmail.com"
+LABEL MAINTAINER "nuanxinqing@gmail.com"
 
 WORKDIR $GOPATH/src/Gin_HomeNavigation
 
@@ -19,10 +19,12 @@ RUN go mod tidy
 
 RUN go build -o Gin_HomeNavigation .
 
-FROM scratch
+FROM alpine
 
-COPY --from=builder go/src/Gin_HomeNavigation/conf /conf
-COPY --from=builder go/src/Gin_HomeNavigation/img /img
+COPY --from=builder go/src/Gin_HomeNavigation/conf /datas/conf
+COPY --from=builder go/src/Gin_HomeNavigation/img /datas/img
 COPY --from=builder go/src/Gin_HomeNavigation/Gin_HomeNavigation /
-
-ENTRYPOINT  ["./Gin_HomeNavigation"]
+COPY --from=builder go/src/Gin_HomeNavigation/start.sh /start.sh
+VOLUME [ "/conf","/img","/nav.log"]
+EXPOSE 80
+ENTRYPOINT  ["/start.sh"]
