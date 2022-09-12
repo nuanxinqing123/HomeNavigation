@@ -192,3 +192,7 @@ A:暂时没有打包，需要自行Clone源码并编译
 Q:如何自己定义上传图片？
 A:可以，请将自定义图片上传到img目录里面。但是推荐大家使用图床（推荐我的个人图床：https://img.6b7.xyz）
 ```
+
+### Infrastructure model
+
+![Infrastructure model](.infragenie/infrastructure_model.png)
